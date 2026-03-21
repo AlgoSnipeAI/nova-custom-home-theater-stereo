@@ -36,6 +36,22 @@ h1, h2, h3 {
     z-index: 1;
 }
 
+/* Logo within the hero section */
+.logo-image {
+    max-width: 200px;
+    width: 40%;
+    height: auto;
+    margin-bottom: 0.5em;
+}
+
+/* Company name styling for hero */
+.company-name {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    margin: 0.2em 0 0.5em;
+}
+
 .hero-text h1 {
     font-size: 3em;
     margin: 0;
