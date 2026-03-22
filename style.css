@@ -38,10 +38,21 @@ h1, h2, h3 {
 
 /* Logo within the hero section */
 .logo-image {
-    max-width: 200px;
-    width: 40%;
+    /* Increase the size of the logo and let it scale naturally.
+       A larger max-width ensures the high-resolution logo appears crisp.
+       Using width: auto prevents scaling that can introduce blur. */
+    max-width: 300px;
+    width: auto;
     height: auto;
     margin-bottom: 0.5em;
+    /* Place the transparent logo on a white panel so it stands out
+       against the dark hero background. The padding gives breathing
+       room around the artwork and the subtle border-radius softens
+       the edges. */
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
 }
 
 /* Company name styling for hero */
