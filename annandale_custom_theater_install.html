@@ -31,11 +31,131 @@
         gap: 20px;
         padding: 20px;
       }
-      .gallery-grid img {
-        width: 100%;
-        height: auto;
+      
+      /* Uniform thumbnail container */
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        aspect-ratio: 1 / 1;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      }
+      
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Modal styles for enlarged image */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        animation: fadeIn 0.3s ease;
+      }
+      
+      .modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      .modal-content {
+        position: relative;
+        max-width: 90vw;
+        max-height: 90vh;
+        animation: slideIn 0.3s ease;
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .modal-content img {
+        width: 100%;
+        height: auto;
+        max-height: 85vh;
+        object-fit: contain;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        background: none;
+        border: none;
+        transition: color 0.3s ease;
+      }
+
+      .modal-close:hover {
+        color: #ccc;
+      }
+
+      .modal-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.3);
+        color: white;
+        border: none;
+        font-size: 30px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        border-radius: 5px;
+      }
+
+      .modal-nav:hover {
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .modal-prev {
+        left: 20px;
+      }
+
+      .modal-next {
+        right: 20px;
+      }
+
+      .modal-counter {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 16px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        border-radius: 5px;
       }
 
       /* Back link styling */
@@ -57,37 +177,149 @@
     <!-- Gallery header with title and description -->
     <header class="gallery-header">
         <h1>Annandale Custom Theater Install</h1>
-        <p>Explore our recent project in Annandale, showcasing the transformation from construction to a fully finished custom home theater.</p>
+        <p>Explore our recent project in Annandale, showcasing the transformation from construction to a fully finished custom home theater. Click any image to enlarge it.</p>
         <div class="back-link"><a href="index.html">&larr; Back to Home</a></div>
     </header>
 
     <!-- Gallery grid containing all project images -->
     <section class="gallery-grid">
-        <img src="image0.jpeg" alt="Annandale theater – stage 0">
-        <img src="image1.jpeg" alt="Annandale theater – stage 1">
-        <img src="image2.jpeg" alt="Annandale theater – stage 2">
-        <img src="image3.jpeg" alt="Annandale theater – stage 3">
-        <img src="image4.jpeg" alt="Annandale theater – stage 4">
-        <img src="image5.jpeg" alt="Annandale theater – stage 5">
-        <img src="image6.jpeg" alt="Annandale theater – stage 6">
-        <img src="image7.jpeg" alt="Annandale theater – stage 7">
-        <img src="image8.jpeg" alt="Annandale theater – stage 8">
-        <img src="image9.jpeg" alt="Annandale theater – stage 9">
-        <img src="image10.jpeg" alt="Annandale theater – stage 10">
-        <img src="image11.jpeg" alt="Annandale theater – stage 11">
-        <img src="image12.jpeg" alt="Annandale theater – stage 12">
-        <img src="image13.jpeg" alt="Annandale theater – stage 13">
-        <img src="image14.jpeg" alt="Annandale theater – stage 14">
-        <img src="image15.jpeg" alt="Annandale theater – stage 15">
-        <img src="image17.jpeg" alt="Annandale theater – stage 17">
-        <img src="image18.jpeg" alt="Annandale theater – stage 18">
-        <img src="image21.jpeg" alt="Annandale theater – stage 21">
-        <img src="image22.jpeg" alt="Annandale theater – stage 22">
+        <div class="gallery-item" data-index="0">
+            <img src="image0.jpeg" alt="Annandale theater – stage 0">
+        </div>
+        <div class="gallery-item" data-index="1">
+            <img src="image1.jpeg" alt="Annandale theater – stage 1">
+        </div>
+        <div class="gallery-item" data-index="2">
+            <img src="image2.jpeg" alt="Annandale theater – stage 2">
+        </div>
+        <div class="gallery-item" data-index="3">
+            <img src="image3.jpeg" alt="Annandale theater – stage 3">
+        </div>
+        <div class="gallery-item" data-index="4">
+            <img src="image4.jpeg" alt="Annandale theater – stage 4">
+        </div>
+        <div class="gallery-item" data-index="5">
+            <img src="image5.jpeg" alt="Annandale theater – stage 5">
+        </div>
+        <div class="gallery-item" data-index="6">
+            <img src="image6.jpeg" alt="Annandale theater – stage 6">
+        </div>
+        <div class="gallery-item" data-index="7">
+            <img src="image7.jpeg" alt="Annandale theater – stage 7">
+        </div>
+        <div class="gallery-item" data-index="8">
+            <img src="image8.jpeg" alt="Annandale theater – stage 8">
+        </div>
+        <div class="gallery-item" data-index="9">
+            <img src="image9.jpeg" alt="Annandale theater – stage 9">
+        </div>
+        <div class="gallery-item" data-index="10">
+            <img src="image10.jpeg" alt="Annandale theater – stage 10">
+        </div>
+        <div class="gallery-item" data-index="11">
+            <img src="image11.jpeg" alt="Annandale theater – stage 11">
+        </div>
+        <div class="gallery-item" data-index="12">
+            <img src="image12.jpeg" alt="Annandale theater – stage 12">
+        </div>
+        <div class="gallery-item" data-index="13">
+            <img src="image13.jpeg" alt="Annandale theater – stage 13">
+        </div>
+        <div class="gallery-item" data-index="14">
+            <img src="image14.jpeg" alt="Annandale theater – stage 14">
+        </div>
+        <div class="gallery-item" data-index="15">
+            <img src="image15.jpeg" alt="Annandale theater – stage 15">
+        </div>
+        <div class="gallery-item" data-index="16">
+            <img src="image17.jpeg" alt="Annandale theater – stage 17">
+        </div>
+        <div class="gallery-item" data-index="17">
+            <img src="image18.jpeg" alt="Annandale theater – stage 18">
+        </div>
+        <div class="gallery-item" data-index="18">
+            <img src="image21.jpeg" alt="Annandale theater – stage 21">
+        </div>
+        <div class="gallery-item" data-index="19">
+            <img src="image22.jpeg" alt="Annandale theater – stage 22">
+        </div>
     </section>
+
+    <!-- Modal for enlarged images -->
+    <div id="imageModal" class="modal">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <button class="modal-nav modal-prev" onclick="previousImage()">&lt;</button>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+        </div>
+        <button class="modal-nav modal-next" onclick="nextImage()">&gt;</button>
+        <div class="modal-counter">
+            <span id="imageCounter">1</span> / <span id="imageTotal">20</span>
+        </div>
+    </div>
 
     <!-- Footer consistent with main site -->
     <footer>
         <p>&copy; 2026 NOVA Custom Home Theater &amp; Stereo. All rights reserved.</p>
     </footer>
+
+    <script>
+        let currentImageIndex = 0;
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const imageCounter = document.getElementById('imageCounter');
+        const imageTotal = document.getElementById('imageTotal');
+
+        // Set total image count
+        imageTotal.textContent = galleryItems.length;
+
+        // Add click event to each gallery item
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentImageIndex = index;
+                openModal(index);
+            });
+        });
+
+        function openModal(index) {
+            const imgElement = galleryItems[index].querySelector('img');
+            modalImage.src = imgElement.src;
+            modalImage.alt = imgElement.alt;
+            imageCounter.textContent = index + 1;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+            openModal(currentImageIndex);
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+            openModal(currentImageIndex);
+        }
+
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('active')) return;
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') previousImage();
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
 </body>
 </html>
