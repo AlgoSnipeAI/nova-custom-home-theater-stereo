@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOVA Custom Home Theater & Stereo</title>
     <link rel="stylesheet" href="style.css">
-
     <style>
         .hero {
             position: relative;
@@ -18,47 +17,41 @@
             height: auto;
         }
 
-        /* Better top-left logo treatment */
-        .logo-badge {
+        /* Small top-left brand mark that does NOT dominate the hero */
+        .logo-corner {
             position: absolute;
-            top: 18px;
-            left: 18px;
-            z-index: 20;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 10px 14px;
-            border-radius: 14px;
-
-            background: rgba(0, 0, 0, 0.42);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
+            top: 14px;
+            left: 16px;
+            z-index: 6;
+            line-height: 0;
         }
 
-        .logo-top-left {
+        .logo-corner img {
             display: block;
             width: auto;
-            height: clamp(38px, 5vw, 68px);
-            max-width: min(42vw, 240px);
+            height: clamp(34px, 4vw, 58px);
+            max-width: 180px;
             object-fit: contain;
         }
 
+        /* Keep the original centered hero composition */
         .hero-text {
             position: absolute;
             inset: 0;
             z-index: 5;
-
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-
+            justify-content: center;
             text-align: center;
-            padding: 120px 20px 40px;
+            padding: 2rem 1rem;
+        }
+
+        /* Original centered logo remains part of the design */
+        .logo-image {
+            width: min(220px, 55vw);
+            height: auto;
+            margin-bottom: 0.75rem;
         }
 
         .company-name,
@@ -68,50 +61,41 @@
         }
 
         @media (max-width: 768px) {
-            .logo-badge {
-                top: 12px;
-                left: 12px;
-                padding: 8px 10px;
-                border-radius: 12px;
-            }
-
-            .logo-top-left {
-                height: 40px;
-                max-width: 52vw;
-            }
-
-            .hero-text {
-                padding: 90px 16px 28px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo-top-left {
-                height: 34px;
-                max-width: 58vw;
-            }
-
-            .logo-badge {
+            .logo-corner {
                 top: 10px;
-                left: 10px;
-                padding: 7px 9px;
+                left: 12px;
+            }
+
+            .logo-corner img {
+                height: 34px;
+                max-width: 130px;
+            }
+
+            .logo-image {
+                width: min(170px, 50vw);
             }
         }
     </style>
 </head>
 <body>
     <header class="hero">
-        <div class="logo-badge">
+        <!-- subtle top-left logo -->
+        <div class="logo-corner">
             <img
                 src="https://algosnipeai.github.io/nova-custom-home-theater-stereo/logo_transparent.png"
                 alt="NOVA Home Theater & Stereo logo"
-                class="logo-top-left"
             >
         </div>
 
         <img src="hero.png" alt="Luxury home theater" class="hero-image">
 
         <div class="hero-text">
+            <!-- original centered logo -->
+            <img
+                src="logo_transparent.png"
+                alt="NOVA Home Theater & Stereo logo"
+                class="logo-image"
+            >
             <h2 class="company-name">NOVA Home Theater & Stereo</h2>
             <h1>Experience Affordable High-End Audio and Video</h1>
             <p>High-Value Home Theater & Stereo Solutions at Unbeatable Prices</p>
@@ -140,21 +124,19 @@
         <h2>Project Showcase</h2>
         <div class="gallery">
             <figure>
-                <img src="home_theater_room.png" alt="Home theater setup">
+                <img src="home_theater_room.png" alt="Home theater setup" />
                 <figcaption>
                     <a href="annandale_custom_theater_install.html">Stunning home theater installations</a>
                 </figcaption>
             </figure>
-
             <figure>
-                <img src="stereo.png" alt="Stereo system">
+                <img src="stereo.png" alt="Stereo system" />
                 <figcaption>
                     <a href="listening-room.html">Dedicated 2-Channel Listening Rooms</a>
                 </figcaption>
             </figure>
-
             <figure>
-                <img src="pedro-martin-33DTXHiqBhE-unsplash.jpg" alt="Speaker close-up">
+                <img src="pedro-martin-33DTXHiqBhE-unsplash.jpg" alt="Speaker close-up" />
                 <figcaption>
                     <a href="high-fidelity-speaker-systems.html">High-fidelity speaker systems</a>
                 </figcaption>
@@ -164,13 +146,12 @@
 
     <section class="about">
         <h2>About NOVA</h2>
-        <p>NOVA Custom Home Theater & Stereo specializes in designing bespoke audio-visual experiences for clients in the Northern VA area. We focus on delivering high-value systems and always charge far less than local competitors for full system design and installation.</p>
-        <p>Share your current estimate with us to see just how much we can save you on a full reference system.</p>
+        <p>NOVA Custom Home Theater & Stereo specializes in designing bespoke audio-visual experiences for clients in the Northern VA area. We focus on delivering high-value systems and always charge far less than local competitors for full system design and installation. Share your current estimate with us to see just how much we can save you on a full reference system.</p>
     </section>
 
     <section class="contact">
         <h2>Contact Us</h2>
-        <p>Ready to transform your home entertainment? Get in touch today.</p>
+        <p>Ready to transform your home entertainment? Get in touch with us today!</p>
         <ul>
             <li><strong>Phone:</strong> (571) 230-3207</li>
             <li><strong>Email:</strong> aamirsiddiquimba@gmail.com</li>
