@@ -13,26 +13,26 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 18px 20px;
+            padding: 20px 20px;
         }
 
-        /* Increased logo size by ~50% */
+        /* ~3x larger logo */
         .brand-logo {
             display: block;
-            height: clamp(135px, 15vw, 240px);
+            height: clamp(270px, 30vw, 480px);  /* tripled */
             width: auto;
-            max-width: 750px;
+            max-width: 1200px;
             object-fit: contain;
         }
 
         @media (max-width: 768px) {
             .site-header {
-                padding: 14px 12px;
+                padding: 16px 12px;
             }
 
             .brand-logo {
-                height: 120px;
-                max-width: 480px;
+                height: 220px;   /* still very large on mobile */
+                max-width: 700px;
             }
         }
     </style>
@@ -49,7 +49,7 @@
     <header class="hero">
         <img src="hero.png" alt="Luxury home theater" class="hero-image">
         <div class="hero-text">
-            <h2 class="company-name">NOVA Home Theater & Stereo</h2>            
+            <h2 class="company-name">NOVA Home Theater & Stereo</h2>
             <h1>High-Value Home Theater & Stereo Solutions at Unbeatable Prices</h1>
         </div>
     </header>
