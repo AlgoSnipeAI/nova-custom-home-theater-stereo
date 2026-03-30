@@ -7,34 +7,38 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        .site-header {
-            background: #ffffff;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px 20px;
-        }
+       .site-header {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 
-        /* ~3x larger logo */
-        .brand-logo {
-            display: block;
-            height: clamp(270px, 30vw, 480px);  /* tripled */
-            width: auto;
-            max-width: 1200px;
-            object-fit: contain;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        @media (max-width: 768px) {
-            .site-header {
-                padding: 16px 12px;
-            }
+    padding: 6px 12px;          /* ↓ drastically reduced vertical space */
+}
 
-            .brand-logo {
-                height: 220px;   /* still very large on mobile */
-                max-width: 700px;
-            }
-        }
+/* Keep logo big but not wasting vertical space */
+.brand-logo {
+    display: block;
+
+    height: clamp(140px, 18vw, 260px);  /* still large but tighter */
+    width: auto;
+
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 4px 8px;
+    }
+
+    .brand-logo {
+        height: 120px;
+    }
+}
     </style>
 </head>
 
