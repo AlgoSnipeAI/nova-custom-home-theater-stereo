@@ -5,42 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOVA Custom Home Theater & Stereo</title>
     <link rel="stylesheet" href="style.css">
+
     <style>
+        /* Top header with properly sized logo */
         .site-header {
             background: #ffffff;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            padding: 10px 18px;
+            padding: 14px 28px;
             display: flex;
             align-items: center;
         }
 
-        .site-header .brand-logo {
+        .brand-logo {
             display: block;
-            height: 52px;
+            height: clamp(56px, 6vw, 90px);
             width: auto;
-            max-width: 220px;
+            max-width: 320px;
             object-fit: contain;
         }
 
+        /* Mobile */
         @media (max-width: 768px) {
             .site-header {
-                padding: 8px 12px;
+                padding: 10px 16px;
             }
 
-            .site-header .brand-logo {
-                height: 38px;
-                max-width: 160px;
+            .brand-logo {
+                height: 52px;
+                max-width: 240px;
             }
         }
     </style>
 </head>
+
 <body>
 
+    <!-- Clean top bar with logo -->
     <div class="site-header">
         <img src="logo_transparent.png" alt="NOVA Home Theater & Stereo logo" class="brand-logo">
     </div>
 
-    <!-- Header section with hero image and tagline -->
+    <!-- Hero section -->
     <header class="hero">
         <img src="hero.png" alt="Luxury home theater" class="hero-image">
         <div class="hero-text">
@@ -50,43 +55,53 @@
         </div>
     </header>
 
-    <!-- Services section -->
+    <!-- Services -->
     <section class="services">
         <h2>Our Services</h2>
         <div class="service-list">
             <div class="service-item">
                 <h3>Custom Home Theaters</h3>
-                <p>We design, build, and install immersive home theater systems tailored to your space, ensuring the ultimate cinematic experience.</p>
+                <p>
+                    We design, build, and install immersive home theater systems tailored to your space, ensuring the ultimate cinematic experience.
+                </p>
             </div>
+
             <div class="service-item">
                 <h3>High-End Stereo Systems</h3>
-                <p>From premium receivers to audiophile speakers, our stereo solutions deliver rich sound quality for every listening environment.</p>
+                <p>
+                    From premium receivers to audiophile speakers, our stereo solutions deliver rich sound quality for every listening environment.
+                </p>
             </div>
+
             <div class="service-item">
                 <h3>Consultation &amp; Design</h3>
-                <p>Our team provides expert consultation and custom design services to transform your audio-visual dreams into reality.</p>
+                <p>
+                    Our team provides expert consultation and custom design services to transform your audio-visual dreams into reality.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Showcase section with images of projects -->
+    <!-- Showcase -->
     <section class="showcase">
         <h2>Project Showcase</h2>
         <div class="gallery">
             <figure>
-                <img src="home_theater_room.png" alt="Home theater setup" />
+                <img src="home_theater_room.png" alt="Home theater setup">
                 <figcaption>
                     <a href="annandale_custom_theater_install.html">Stunning home theater installations</a>
                 </figcaption>
             </figure>
+
             <figure>
-                <img src="stereo.png" alt="Stereo system" />
+                <img src="stereo.png" alt="Stereo system">
                 <figcaption>
                     <a href="listening-room.html">Dedicated 2-Channel Listening Rooms</a>
                 </figcaption>
             </figure>
+
             <figure>
-                <img src="pedro-martin-33DTXHiqBhE-unsplash.jpg" alt="Speaker close-up" />
+                <img src="pedro-martin-33DTXHiqBhE-unsplash.jpg" alt="Speaker close-up">
                 <figcaption>
                     <a href="high-fidelity-speaker-systems.html">High-fidelity speaker systems</a>
                 </figcaption>
@@ -94,13 +109,19 @@
         </div>
     </section>
 
-    <!-- About section -->
+    <!-- About -->
     <section class="about">
         <h2>About NOVA</h2>
-        <p>NOVA Custom Home Theater & Stereo specializes in designing bespoke audio-visual experiences for clients in the Northern VA area. We focus on delivering high-value systems and always charge far less than any local prices for full system design and installation. Share your current estimate with us to see just how much we can save you on a full reference system.</p>
+        <p>
+            NOVA Custom Home Theater & Stereo specializes in designing bespoke audio-visual experiences for clients in the Northern VA area. 
+            We focus on delivering high-value systems and always charge far less than local competitors for full system design and installation.
+        </p>
+        <p>
+            Share your current estimate with us to see just how much we can save you on a full reference system.
+        </p>
     </section>
 
-    <!-- Contact section -->
+    <!-- Contact -->
     <section class="contact">
         <h2>Contact Us</h2>
         <p>Ready to transform your home entertainment? Get in touch with us today!</p>
